@@ -1,11 +1,11 @@
 package com.qriosity.service;
 
-import com.google.gson.Gson;
-import com.qriosity.model.SharedJsonItem;
+import com.qriosity.mvc.model.SharedJsonItem;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -17,6 +17,7 @@ import java.util.Map;
 /**
  * To change this template use File | Settings | File Templates.
  */
+@Service
 public class VendorWidgetServiceImpl implements VendorWidgetService {
 
     private Map<String, String> vendorUrlMap;
@@ -91,12 +92,5 @@ public class VendorWidgetServiceImpl implements VendorWidgetService {
             e.printStackTrace();
         }
         return sb.toString();
-    }
-
-    public static void main(String[] args) {
-        final VendorWidgetServiceImpl vendorWidgetService = new VendorWidgetServiceImpl();
-
-        System.out.println(vendorWidgetService.getProductRelatedData("zappos", "1788226"));
-
     }
 }

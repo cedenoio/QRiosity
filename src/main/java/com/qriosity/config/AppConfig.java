@@ -1,3 +1,5 @@
+package com.qriosity.config;
+
 import java.util.List;
 
 import org.codehaus.jackson.map.DeserializationConfig;
@@ -22,7 +24,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"com.qriosity.mvc.controller"})
+@ComponentScan(basePackages = {"com.qriosity.mvc.controller","com.qriosity.service"})
 public class AppConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
