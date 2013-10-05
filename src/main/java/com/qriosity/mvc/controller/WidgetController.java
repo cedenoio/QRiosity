@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author yoandy
@@ -17,12 +18,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 @RequestMapping("/widget")
-@Scope
 public class WidgetController {
+
     @Resource
-    VendorWidgetService vendorWidgetService;
+    private VendorWidgetService vendorWidgetService;
 
     @RequestMapping(value = "/vendor/{vendor}/itemId/{itemId}", method = RequestMethod.GET)
+    @ResponseBody
     public List<SharedJsonItem> VendorInfo(@PathVariable("vendor") final String vendor, @PathVariable("itemId") final String itemId) {
         return vendorWidgetService.getProductRelatedData(vendor, itemId);
     }
