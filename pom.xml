@@ -9,7 +9,11 @@
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
-
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>core</artifactId>
+            <version>2.0</version>
+        </dependency>
     </dependencies>
 
 
@@ -32,6 +36,7 @@
                             <name>log4j.configuration</name>
                             <value>file:./src/main/resources/log4j.xml</value>
                         </systemProperty>
+                        `
                     </systemProperties>
                     <connectors>
                         <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector" name="a">
