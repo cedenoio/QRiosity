@@ -78,7 +78,6 @@
                             <name>log4j.configuration</name>
                             <value>file:./src/main/resources/log4j.xml</value>
                         </systemProperty>
-                        `
                     </systemProperties>
                     <connectors>
                         <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector" name="a">
