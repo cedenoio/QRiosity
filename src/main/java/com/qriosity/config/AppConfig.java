@@ -1,3 +1,5 @@
+package com.qriosity.config;
+
 import java.util.List;
 
 import org.codehaus.jackson.map.DeserializationConfig;
