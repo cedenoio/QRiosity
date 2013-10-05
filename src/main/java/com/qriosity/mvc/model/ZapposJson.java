@@ -1,4 +1,4 @@
-package com.qriosity.model;
+package com.qriosity.mvc.model;
 
 import java.util.ArrayList;
 import java.util.List;

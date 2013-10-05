@@ -1,9 +1,8 @@
 package com.qriosity.mvc.controller;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 import javax.annotation.Resource;
-
+import com.qriosity.mvc.model.SharedJsonItem;
 import com.qriosity.service.VendorWidgetService;
 
 import org.springframework.context.annotation.Scope;
@@ -17,16 +16,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @since 10/5/13
  */
 @Controller
-@RequestMapping("/wigdet")
+@RequestMapping("/widget")
 @Scope
 public class WidgetController {
     @Resource
     VendorWidgetService vendorWidgetService;
 
-    @RequestMapping(value = "/info/vendorId/{vid}/itemId/{iid}", method = RequestMethod.GET)
-    public Map<String, Object> VendorInfo(@PathVariable("vid") final String vendorId, @PathVariable("iid") final String itemId) {
-        Map<String, Object> rval = new HashMap<String, Object>();
-
-        return rval;
+    @RequestMapping(value = "/vendor/{vendor}/itemId/{itemId}", method = RequestMethod.GET)
+    public List<SharedJsonItem> VendorInfo(@PathVariable("vendor") final String vendor, @PathVariable("itemId") final String itemId) {
+        return vendorWidgetService.getProductRelatedData(vendor, itemId);
     }
 }

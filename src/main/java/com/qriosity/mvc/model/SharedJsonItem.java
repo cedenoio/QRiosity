@@ -1,4 +1,4 @@
-package com.qriosity.model;
+package com.qriosity.mvc.model;
 
 /**
  * JSON class that will be normalized to so that UI can understand

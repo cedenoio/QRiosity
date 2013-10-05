@@ -1,6 +1,6 @@
 package com.qriosity.service;
 
-import com.qriosity.model.SharedJsonItem;
+import com.qriosity.mvc.model.SharedJsonItem;
 
 import java.util.List;
 

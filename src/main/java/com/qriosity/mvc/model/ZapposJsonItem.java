@@ -1,4 +1,4 @@
-package com.qriosity.model;
+package com.qriosity.mvc.model;
 
 /**
  * Zappos JSON object for each item
