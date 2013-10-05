@@ -1,9 +1,9 @@
 @font-face {
   font-family: "QR_medium";
-  src: url("file://localhost/Users/seankennedy/development/QRiosity/QRiosity/fonts/QR_medium.eot");
-  src: url("file://localhost/Users/seankennedy/development/QRiosity/QRiosity/fonts/QR_medium.eot?#iefix");
-  src: url("file://localhost/Users/seankennedy/development/QRiosity/QRiosity/fonts/QR_medium.woff");
-  src: url("file://localhost/Users/seankennedy/development/QRiosity/QRiosity/fonts/QR_medium.ttf");
+  src: url("../fonts/QR_medium.eot");
+  src: url("../fonts/QR_medium.eot?#iefix");
+  src: url("../fonts/QR_medium.woff");
+  src: url("../fonts/QR_medium.ttf");
   font-weight: normal;
   font-style: normal;
 }
