@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Main JSON Object that is coming back from Zappos
  */
-public class ZapposJson implements VendorJsonItem {
+public class ZapposJson {
 
     private String limit;
     private String statusCode;
