@@ -14,4 +14,6 @@ public interface VendorDataTransformer {
     public List<SharedJsonItem> transform(String json);
 
     public SharedJsonItem transform(VendorJsonItem item);
+
+    public SharedJsonItem transformProduct(VendorJsonItem item);
 }

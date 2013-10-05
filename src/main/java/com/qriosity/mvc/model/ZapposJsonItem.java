@@ -4,6 +4,7 @@ package com.qriosity.mvc.model;
  * Zappos JSON object for each item
  */
 public class ZapposJsonItem implements VendorJsonItem {
+
     private String percentOff;
     private String thumbnailImageUrl;
     private String isNew;
@@ -14,6 +15,24 @@ public class ZapposJsonItem implements VendorJsonItem {
     private String brandName;
     private String productName;
     private String styleId;
+    private String productId;
+    private String productRating;
+
+    public String getProductId() {
+        return productId;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
+
+    public String getProductRating() {
+        return productRating;
+    }
+
+    public void setProductRating(String productRating) {
+        this.productRating = productRating;
+    }
 
     public String getStyleId() {
         return styleId;

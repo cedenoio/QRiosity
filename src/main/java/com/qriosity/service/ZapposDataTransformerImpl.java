@@ -9,6 +9,7 @@ import com.qriosity.mvc.model.ZapposJsonItem;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.qriosity.mvc.model.zappos.ZapposProductJson;
 import org.springframework.stereotype.Service;
 
 /**
@@ -40,6 +41,24 @@ public class ZapposDataTransformerImpl implements VendorDataTransformer {
         sharedJsonItem.setSalePrice(item.getPrice());
         sharedJsonItem.setProductName(item.getProductName());
 
+        return sharedJsonItem;
+    }
+
+    @Override
+    public SharedJsonItem transformProduct(VendorJsonItem zapposJson) {
+        ZapposProductJson product = (ZapposProductJson) zapposJson;
+        SharedJsonItem sharedJsonItem = new SharedJsonItem();
+
+        if (product.getProduct().size() > 0) {
+            final ZapposProductJson.Product product1 = product.getProduct().get(0);
+            final ZapposProductJson.Product.Style item = product1.getStyles().get(0);
+            sharedJsonItem.setBrandName(product1.getBrandName());
+            sharedJsonItem.setImageUrl(item.getImageUrl());
+            sharedJsonItem.setPrice(item.getOriginalPrice());
+            sharedJsonItem.setSalePrice(item.getPrice());
+            sharedJsonItem.setProductName(product1.getProductName());
+
+        }
         return sharedJsonItem;
     }
 
