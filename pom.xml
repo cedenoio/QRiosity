@@ -13,7 +13,6 @@
         <zxing.version>2.0</zxing.version>
     </properties>
 
-
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -32,6 +31,33 @@
         </dependency>
     </dependencies>
 
+    <repositories>
+        <repository>
+            <id>MavenCentral</id>
+            <name>Maven repository</name>
+            <url>http://search.maven.org/remotecontent?filepath=</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>maven.plugins</id>
+            <name>Maven Repository</name>
+            <url>http://search.maven.org/remotecontent?filepath=</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 
     <build>
         <finalName>QRiosity</finalName>
