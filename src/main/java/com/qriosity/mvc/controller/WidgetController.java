@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.Resource;
 
+import com.qriosity.service.VendorWidgetService;
+
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
