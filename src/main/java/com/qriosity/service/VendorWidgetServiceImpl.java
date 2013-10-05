@@ -15,12 +15,16 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * To change this template use File | Settings | File Templates.
+ *
  */
 @Service
 public class VendorWidgetServiceImpl implements VendorWidgetService {
 
+
+
+    // URLs provided by vendors to get widget related info
     private Map<String, String> vendorUrlMap;
+    //
     private Map<String, VendorDataTransformer> vendorDataTransformerMap;
 
     public VendorWidgetServiceImpl() {

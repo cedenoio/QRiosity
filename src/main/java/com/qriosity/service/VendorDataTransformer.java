@@ -1,6 +1,8 @@
 package com.qriosity.service;
 
 import com.qriosity.mvc.model.SharedJsonItem;
+import com.qriosity.mvc.model.VendorJsonItem;
+import com.qriosity.mvc.model.ZapposJsonItem;
 
 import java.util.List;
 
@@ -11,4 +13,5 @@ public interface VendorDataTransformer {
 
     public List<SharedJsonItem> transform(String json);
 
+    public SharedJsonItem transform(VendorJsonItem item);
 }

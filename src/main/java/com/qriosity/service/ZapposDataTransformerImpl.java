@@ -2,6 +2,7 @@ package com.qriosity.service;
 
 import com.google.gson.Gson;
 import com.qriosity.mvc.model.SharedJsonItem;
+import com.qriosity.mvc.model.VendorJsonItem;
 import com.qriosity.mvc.model.ZapposJson;
 import com.qriosity.mvc.model.ZapposJsonItem;
 
@@ -29,13 +30,15 @@ public class ZapposDataTransformerImpl implements VendorDataTransformer {
         return sharedJsonItems;
     }
 
-    private SharedJsonItem transform(ZapposJsonItem zapposJson) {
+    @Override
+    public SharedJsonItem transform(VendorJsonItem zapposJson) {
+        ZapposJsonItem item = (ZapposJsonItem) zapposJson;
         SharedJsonItem sharedJsonItem = new SharedJsonItem();
-        sharedJsonItem.setBrandName(zapposJson.getBrandName());
-        sharedJsonItem.setImageUrl(zapposJson.getThumbnailImageUrl());
-        sharedJsonItem.setPrice(zapposJson.getOriginalPrice());
-        sharedJsonItem.setSalePrice(zapposJson.getPrice());
-        sharedJsonItem.setProductName(zapposJson.getProductName());
+        sharedJsonItem.setBrandName(item.getBrandName());
+        sharedJsonItem.setImageUrl(item.getThumbnailImageUrl());
+        sharedJsonItem.setPrice(item.getOriginalPrice());
+        sharedJsonItem.setSalePrice(item.getPrice());
+        sharedJsonItem.setProductName(item.getProductName());
 
         return sharedJsonItem;
     }
