@@ -30,7 +30,8 @@ var getWedgie = function () {
                 //data: null,
                 dataType: "json",
                 success: function (data) {
-                                alert(data);
+                                console.log(data.id);
+                                $('.wedgie').append('<iframe src=https://www.wedgies.com/embed/question/' + data.id + ' class="span12" style="min-height: 600px"></iframe>').focus();
                         }
         });
 }
@@ -118,12 +119,12 @@ var insertItem = function ( data ) {
                                         '</h1>' +
                                         '<div class="action-call row-fluid">' + 
                                                 '<div class="span12">' + 
-                                                        'Want other opinions? Create a poll and ask friends!' + 
+                                                        'Need help deciding?' + 
                                                 '</div>' + 
                                         '</div>' + 
                                         '<div class="action-call row-fluid">' +
-                                                '<div class="select-random span6 text-center"><a href="#">Select random items for me</a></div>' +
-                                                '<div class="select-user span6 text-center"><a href="#">Let me choose 3 items</a></div>' +
+                                                //'<div class="select-random span6 text-center"><a href="#">Select random items for me</a></div>' +
+                                                '<div class="select-user span12 text-center"><a href="#">Ask My Friends</a></div>' +
                                         '</div>' + 
                                 '</div>' +
                         '</div>';
@@ -131,7 +132,8 @@ var insertItem = function ( data ) {
                 vendorSection.append(innerHTML);
                 
                 $(".select-user, .select-random").on("click", function() { 
-                    $(".submit-buttons").show();
+                    //$(".submit-buttons").show();
+                    $(".compare").show();
                 });
                 
         }      
@@ -156,7 +158,7 @@ var insertVendor = function ( vendorName, data ) {
                     '<span>' +
                         val.productName +
                     '</span>' +
-                    '<img class="compare" data-compareURL="' + val.itemId + '" src="http://dribbble.s3.amazonaws.com/users/220205/screenshots/783935/checkbox.jpg" width="100"/>' +
+                    '<div class="compare-div"><img class="compare hide" style="display:none" data-compareURL="' + val.itemId + '" src="http://dribbble.s3.amazonaws.com/users/220205/screenshots/783935/checkbox.jpg" width="100"/></div>' +
                 '</h3>' +
                 '<div class="price">' +
                     val.price + 
