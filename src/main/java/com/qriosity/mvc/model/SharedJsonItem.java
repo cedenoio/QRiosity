@@ -15,6 +15,13 @@ public class SharedJsonItem {
 
     private String highresImageUrl;
 
+    public SharedJsonItem() {
+    }
+
+    public SharedJsonItem(String itemId) {
+        this.itemId = itemId;
+    }
+
     public String getItemId() {
         return itemId;
     }

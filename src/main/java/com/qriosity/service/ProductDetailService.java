@@ -1,22 +1,20 @@
 package com.qriosity.service;
 
-import com.google.gson.Gson;
 import com.qriosity.mvc.model.SharedJsonItem;
-import com.qriosity.mvc.model.ZapposJson;
 import com.qriosity.mvc.model.zappos.ZapposProductJson;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  */
 @Service
 public class ProductDetailService {
-    private String url = "http://api.zappos.com/Product/styleId/%s?includes=[\"styles\"]&key=%s";
+    private String url = "http://api.zappos.com/Product/styleId/[%s]?includes=[\"styles\"]&key=%s";
     private static final String zapposApiKey = "52ddafbe3ee659bad97fcce7c53592916a6bfd73";
 
     @Resource
@@ -41,5 +39,6 @@ public class ProductDetailService {
         }
         return null;
     }
+
 
 }

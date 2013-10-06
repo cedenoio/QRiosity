@@ -29,6 +29,9 @@ public class VendorWidgetServiceImpl implements VendorWidgetService {
     @Autowired
     private ZapposImageService zapposImageService;
 
+    @Autowired
+    private CrazyCache crazyCache;
+
     public VendorWidgetServiceImpl() {
 
         this.vendorUrlMap = new HashMap<String, String>();
@@ -62,6 +65,8 @@ public class VendorWidgetServiceImpl implements VendorWidgetService {
 
             final List<SharedJsonItem> sharedJsonItemList = dataTransformer.transform(vendorJson);
             zapposImageService.get(sharedJsonItemList);
+
+            crazyCache.addAll(sharedJsonItemList);
             return sharedJsonItemList;
         }
         else {
