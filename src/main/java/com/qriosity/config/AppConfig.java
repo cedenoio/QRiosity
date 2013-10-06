@@ -30,9 +30,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class AppConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/css/**").addResourceLocations("/styles/").setCachePeriod(31556926);
-        registry.addResourceHandler("/img/**").addResourceLocations("/img/").setCachePeriod(31556926);
-        registry.addResourceHandler("/js/**").addResourceLocations("/js/").setCachePeriod(31556926);
+        registry.addResourceHandler("/css/**").addResourceLocations("/styles/").setCachePeriod(0);
+        registry.addResourceHandler("/img/**").addResourceLocations("/img/").setCachePeriod(0);
+        registry.addResourceHandler("/js/**").addResourceLocations("/js/").setCachePeriod(0);
     }
 
     @Override
