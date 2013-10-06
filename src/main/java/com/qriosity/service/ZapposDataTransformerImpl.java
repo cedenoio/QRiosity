@@ -56,7 +56,7 @@ public class ZapposDataTransformerImpl implements VendorDataTransformer {
         sharedJsonItem.setPrice(item.getOriginalPrice());
         sharedJsonItem.setSalePrice(item.getPrice());
         sharedJsonItem.setProductName(item.getProductName());
-
+        sharedJsonItem.setProductUrl(item.getProductUrl());
         return sharedJsonItem;
     }
 
@@ -73,7 +73,7 @@ public class ZapposDataTransformerImpl implements VendorDataTransformer {
             sharedJsonItem.setPrice(item.getOriginalPrice());
             sharedJsonItem.setSalePrice(item.getPrice());
             sharedJsonItem.setProductName(product1.getProductName());
-
+            sharedJsonItem.setProductUrl(product1.getDefaultProductUrl());
         }
         return sharedJsonItem;
     }
