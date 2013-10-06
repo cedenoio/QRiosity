@@ -139,12 +139,12 @@ public class WedgiesService {
     private JsonObject createJson(List<String> choices) {
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("text", WEDGIE_QUESTION_TXT);
-        jsonObject.addProperty("user", WEDGIE_USER_ID);
+        jsonObject.addProperty("owner", WEDGIE_USER_ID);
 
         JsonArray jsonArray = new JsonArray();
         for (int i=0; i < choices.size(); i++) {
             JsonObject jsonChoice = new JsonObject();
-            jsonChoice.addProperty(choices.get(i), "OPTION " + (i+1));
+            jsonChoice.addProperty("text", choices.get(i));
             jsonArray.add(jsonChoice);
         }
         jsonObject.add("choices", jsonArray);
