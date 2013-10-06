@@ -1,0 +1,12 @@
+// @import 'partials/_variables'
+
+//Mixins
+@mixin declare-font-face($font-family, $font-filename)
+	@font-face
+		font-family: '#{$font-family}'
+		src: url('#{$font-filename}.eot')
+		src: url('#{$font-filename}.eot?#iefix')
+		src: url('#{$font-filename}.woff')
+		src: url('#{$font-filename}.ttf')
+		font-weight: normal
+		font-style: normal
