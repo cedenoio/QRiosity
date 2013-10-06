@@ -1,14 +1,28 @@
+@import 'partials/_mixins'
 @import 'partials/_variables'
-@import 'partials/mixins'
-@import 'partials/base'
+@import 'partials/_base'
 
 body
-	background: $black
-
-.container
-	background: $gray
+	background: url('/img/bg.jpg')
 
 header
-	h1.logo
-		font-family: qlassik_regular
+	background: $tan
+	border: 1px solid $border
+
+	a.logo
+		margin: 0 auto
+		display: block
+		font-family: QR_medium
+		font-size: 30px
 		color: $red
+		span
+			text-transform: uppercase
+
+.columns
+	background: $white
+
+img
+	display: block
+	background: $black
+	height: 100px
+	width: 100px
