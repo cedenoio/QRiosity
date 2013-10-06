@@ -923,7 +923,7 @@ header {
 
 .scan {
   padding: 20px 0;
-  background: #65ba99;
+  background: url(../img/closet_banner.jpg);
   text-align: center; }
   .scan img {
     margin: 0 auto;
@@ -934,17 +934,37 @@ header {
     border-radius: 150px;
     border: 5px solid #f0f0f0; }
   .scan h1 {
-    font-size: 30px;
+    font-size: 50px;
     font-weight: bold;
-    color: #d6c4a6; }
+    color: #f0f0f0; }
     .scan h1 span {
+      display: block;
       font-size: 20px;
-      font-weight: normal;
-      color: #f0f0f0; }
+      font-weight: normal; }
 
 .result {
-  background: #59a386;
-  text-align: center; }
+  background: #f0f0f0;
+  overflow: hidden;
+  max-height: 305px; }
+  .result h3 {
+    margin: 0 0 200px;
+    padding: 10px 20px;
+    background: blue; }
+    .result h3 span {
+      display: block;
+      font-size: 15px;
+      font-weight: lighter;
+      font-family: helvetica; }
+  .result .price {
+    padding: 0 20px 10px 0;
+    float: right;
+    text-align: right; }
+    .result .price span {
+      display: block;
+      color: #e74c3c;
+      font-size: 18px; }
   .result img {
     margin: 0 auto;
-    width: 100%; }
+    width: 100%;
+    position: relative;
+    top: -300px; }

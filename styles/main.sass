@@ -27,7 +27,7 @@ header
 
 .scan
 	padding: 20px 0
-	background: $green
+	background: url(../img/closet_banner.jpg)
 	text-align: center
 
 	img
@@ -39,19 +39,44 @@ header
 		border: 5px solid $white
 
 	h1
-		font-size: 30px
+		font-size: 50px
 		font-weight: bold
-		color: $tan-dark
+		color: $white
 
 		span
+			display: block
 			font-size: 20px
 			font-weight: normal
-			color: $white
+			
 
-.result
-	background: $green-dark
-	text-align: center
+.result	
+	background: $white
+	overflow: hidden
+	max-height: 305px
+
+	h3
+		margin: 0 0 200px
+		padding: 10px 20px
+		background: blue
+
+		span
+			display: block
+			font-size: 15px
+			font-weight: lighter
+			font-family: helvetica
+
+	.price
+		padding: 0 20px 10px 0
+		float: right
+		text-align: right
+
+		span
+			display: block
+			color: $red
+			font-size: 18px
 
 	img
 		margin: 0 auto
 		width: 100%
+		position: relative
+		top: -300px
