@@ -22,6 +22,19 @@ var getURLParameter = function(name) {
     );
 }
 
+var getWedgie = function () {
+        var url = "http://localhost:8080/widget/wedgies/create?ids=" + selectedItems[0] + ',' + selectedItems[1] + ',' + selectedItems[2]; 
+        $.ajax({
+                type: "GET",
+                url: url,
+                //data: null,
+                dataType: "json",
+                success: function (data) {
+                                alert(data);
+                        }
+        });
+}
+
 var getItemData = function ( itemID ) {
         
         var url = "http://localhost:8080/widget/itemId/" + itemID; 
@@ -176,14 +189,22 @@ var insertVendor = function ( vendorName, data ) {
     $('.vendor' + inProgress[4] + ' .compare'). each( function ( ) {
         $(this).on("click", function( e ) {
                 e.preventDefault();
-            	if ( selectedItems.length < 2 )
+                console.log(selectedItems.length);
+                var len = isNaN(selectedItems.length)?0:selectedItems.length;
+            	if ( len < 3 )
             	{
                     	var itemID = $(this).attr("data-compareURL");
-                    	selectedItems[ selectedItems.length + 1 ] = itemID;
+                    	selectedItems[ len ] = itemID;
+                    	console.log( 'length = ' + len + ' **** ' + itemID + ' *** ' + selectedItems[ len ]);
+                    	if ( len == 2 )
+                    	{
+                    	        getWedgie();
+                    	}
             	}
             	else
             	{
             	        console.log ( selectedItems[0] + ' -+- ' + selectedItems[1] + ' -+- ' + selectedItems[2] );
+            	        
             	}
     	});
     });   
