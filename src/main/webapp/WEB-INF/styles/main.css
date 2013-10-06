@@ -1576,29 +1576,22 @@ section h2 {
   background-color: #f0f0f0;
 }
 /* line 119, main.sass */
-.result .compare-div {
+.result img.compare {
   float: right;
+  height: 30px;
+  width: 30px;
   top: -40px;
   right: -10px;
   z-index: 9;
-  overflow: hidden;
-}
-/* line 129, main.sass */
-.result img.compare {
-  height: 60px;
-  width: 60px;
-  position: relative;
-  float: left;
-  top: -40px;
-  z-index: 20;
+  border: 1px solid #e74c3c;
 }
 
-/* line 138, main.sass */
+/* line 129, main.sass */
 .text-center {
   position: relative;
   text-align: center;
 }
-/* line 142, main.sass */
+/* line 133, main.sass */
 .text-center .compare {
   float: right;
   height: 30px;
@@ -1609,12 +1602,12 @@ section h2 {
   border: 1px solid #e74c3c;
 }
 
-/* line 151, main.sass */
+/* line 142, main.sass */
 .hide {
   display: none;
 }
 
-/* line 155, main.sass */
+/* line 146, main.sass */
 .buyit a {
   margin: 0 0 8px;
   padding: 5px 10px;
@@ -1626,7 +1619,7 @@ section h2 {
   font-family: arial;
   color: #59a386;
 }
-/* line 165, main.sass */
+/* line 156, main.sass */
 .buyit a:hover {
   color: #e74c3c !important;
 }
