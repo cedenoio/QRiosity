@@ -3,9 +3,12 @@
 @import 'partials/_base'
 
 body
-	background: url('/img/bg.jpg')
+	margin: 0
+	background: $gray
 
 header
+	margin: 0
+	padding: 10px 5px
 	background: $tan
 	border: 1px solid $border
 
@@ -15,14 +18,19 @@ header
 		font-family: QR_medium
 		font-size: 30px
 		color: $red
+		text-decoration: none
+		letter-spacing: -1px
 		span
 			text-transform: uppercase
+			letter-spacing: 0px
 
-.columns
-	background: $white
-
+//TO DO: remove this
 img
 	display: block
 	background: $black
 	height: 100px
 	width: 100px
+
+.scan
+	padding: 20px 0
+	background: $green
