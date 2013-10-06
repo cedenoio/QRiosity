@@ -3,17 +3,18 @@
 @import 'partials/_base'
 
 body
-	margin: 0
+	margin-top: 0
 	background: $gray
+	font-family: Nixie
 
 header
-	margin: 0
+	//margin: 0
 	padding: 10px 5px
 	background: $tan
 	border: 1px solid $border
 
 	a.logo
-		margin: 0 auto
+		margin: 0 20px
 		display: block
 		font-family: QR_medium
 		font-size: 30px
@@ -22,15 +23,35 @@ header
 		letter-spacing: -1px
 		span
 			text-transform: uppercase
-			letter-spacing: 0px
-
-//TO DO: remove this
-img
-	display: block
-	background: $black
-	height: 100px
-	width: 100px
+			letter-spacing: 0
 
 .scan
 	padding: 20px 0
 	background: $green
+	text-align: center
+
+	img
+		margin: 0 auto
+		display: block
+		width: 150px
+		height: 150px
+		@include border-radius(150px)
+		border: 5px solid $white
+
+	h1
+		font-size: 30px
+		font-weight: bold
+		color: $tan-dark
+
+		span
+			font-size: 20px
+			font-weight: normal
+			color: $white
+
+.result
+	background: $green-dark
+	text-align: center
+
+	img
+		margin: 0 auto
+		width: 100%
