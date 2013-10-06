@@ -7,6 +7,15 @@
   font-weight: normal;
   font-style: normal; }
 
+@font-face {
+  font-family: "Nixie";
+  src: url("../fonts/nixie.eot");
+  src: url("../fonts/nixie.eot?#iefix");
+  src: url("../fonts/nixie.woff");
+  src: url("../fonts/nixie.ttf");
+  font-weight: normal;
+  font-style: normal; }
+
 /*!
  * Bootstrap Responsive v2.3.2
  *
@@ -892,16 +901,16 @@
     height: auto !important;
     overflow: visible !important; } }
 body {
-  margin: 0;
-  background: #dddddd; }
+  margin-top: 0;
+  background: #dddddd;
+  font-family: Nixie; }
 
 header {
-  margin: 0;
   padding: 10px 5px;
   background: #f1ddbb;
   border: 1px solid #d6c4a6; }
   header a.logo {
-    margin: 0 auto;
+    margin: 0 20px;
     display: block;
     font-family: QR_medium;
     font-size: 30px;
@@ -910,14 +919,52 @@ header {
     letter-spacing: -1px; }
     header a.logo span {
       text-transform: uppercase;
-      letter-spacing: 0px; }
-
-img {
-  display: block;
-  background: black;
-  height: 100px;
-  width: 100px; }
+      letter-spacing: 0; }
 
 .scan {
   padding: 20px 0;
-  background: #65ba99; }
+  background: url(../img/closet_banner.jpg);
+  text-align: center; }
+  .scan img {
+    margin: 0 auto;
+    display: block;
+    width: 150px;
+    height: 150px;
+    -webkit-border-radius: 150px;
+    border-radius: 150px;
+    border: 5px solid #f0f0f0; }
+  .scan h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: #f0f0f0; }
+    .scan h1 span {
+      display: block;
+      font-size: 20px;
+      font-weight: normal; }
+
+.result {
+  background: #f0f0f0;
+  overflow: hidden;
+  max-height: 305px; }
+  .result h3 {
+    margin: 0 0 200px;
+    padding: 10px 20px;
+    background: blue; }
+    .result h3 span {
+      display: block;
+      font-size: 15px;
+      font-weight: lighter;
+      font-family: helvetica; }
+  .result .price {
+    padding: 0 20px 10px 0;
+    float: right;
+    text-align: right; }
+    .result .price span {
+      display: block;
+      color: #e74c3c;
+      font-size: 18px; }
+  .result img {
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    top: -300px; }
