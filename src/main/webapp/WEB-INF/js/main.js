@@ -2,6 +2,7 @@ var inProgress = [false, -2, ['zappos', 'tjmaxx', 'macys'], 'blah', 0];
 var ajaxInterval;
 var itemID;
 var vendorName;
+var selectedItems = new Array();
 
 $(document).ready(function () {
     itemID = getURLParameter('itemID');
@@ -151,7 +152,7 @@ var insertVendor = function ( vendorName, data ) {
                     '</span>' +
                 '</div>' +
                 '<div class="clearfix"></div>' +
-                '<img src="' + val.highresImageUrl + '" />' +
+                '<img class="high-res" src="' + val.highresImageUrl + '" />' +
             '</div>';
         }
     });
@@ -160,14 +161,30 @@ var insertVendor = function ( vendorName, data ) {
     
     vendorSection.append(innerHTML);
 
-    $('.vendor' + inProgress[4] + ' .result img').click(function() {
-    	$('.result img').css('top', '-260px');
-    	var testing = $(this).attr("data-compareURL");
-    	console.log(testing);
-	  	$(this).animate({
-	    	top: "-=1000"
-	  	}, 1000, function() {
-	    	// Animation complete.
-	  	});
-	});      
+    $('.vendor' + inProgress[4] + ' .high-res').each( function() {
+        $(this).on("click", function() {
+    	        //$(this).css('top', '-260px');
+
+          	$(this).animate({
+	            	top: "-=1000"
+	          	}, 1000, function() {
+	            	// Animation complete.
+	          	});
+	        });      
+        });
+     
+    $('.vendor' + inProgress[4] + ' .compare'). each( function ( ) {
+        $(this).on("click", function( e ) {
+                e.preventDefault();
+            	if ( selectedItems.length < 2 )
+            	{
+                    	var itemID = $(this).attr("data-compareURL");
+                    	selectedItems[ selectedItems.length + 1 ] = itemID;
+            	}
+            	else
+            	{
+            	        console.log ( selectedItems[0] + ' -+- ' + selectedItems[1] + ' -+- ' + selectedItems[2] );
+            	}
+    	});
+    });   
 }
