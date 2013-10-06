@@ -8,7 +8,9 @@ $(document).ready(function () {
     vendorName = getURLParameter('vendor');
     inProgress[3] = vendorName;
     ajaxInterval = setInterval( ajaxCalls, 1000 );
-	getItemData( itemID );
+    getItemData( itemID );
+    
+
 
 });
 
@@ -106,13 +108,17 @@ var insertItem = function ( data ) {
                                                 '</div>' + 
                                         '</div>' + 
                                         '<div class="action-call row-fluid">' +
-                                                '<div class="span6 text-center"><a href="#">Select random items for me</a></div>' +
-                                                '<div class="span6 text-center"><a href="#">Let me choose 3 items</a></div>' +
+                                                '<div class="select-random span6 text-center"><a href="#">Select random items for me</a></div>' +
+                                                '<div class="select-user span6 text-center"><a href="#">Let me choose 3 items</a></div>' +
                                         '</div>' + 
                                 '</div>' +
                         '</div>';
                 
                 vendorSection.append(innerHTML);
+                
+                $(".select-user, .select-random").on("click", function() { 
+                    $(".submit-buttons").show();
+                });
                 
         }      
         
@@ -136,7 +142,11 @@ var insertVendor = function ( vendorName, data ) {
                     '<span>' +
                         val.productName +
                     '</span>' +
+<<<<<<< HEAD
+                    '<img class="compare" data-compareURL="' + val.itemId + '" src="http://dribbble.s3.amazonaws.com/users/220205/screenshots/783935/checkbox.jpg" width="100"/>' +
+=======
                     '<div class="compare" data-compareURL="[blank]"></div>' +
+>>>>>>> a3af329381eb7ec99f33ba3677a2bb0d219d065d
                 '</h3>' +
                 '<div class="price">' +
                     val.price + 
