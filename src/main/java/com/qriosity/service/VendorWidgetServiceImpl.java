@@ -5,6 +5,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -24,6 +25,9 @@ public class VendorWidgetServiceImpl implements VendorWidgetService {
     private Map<String, String> vendorUrlMap;
     //
     private Map<String, VendorDataTransformer> vendorDataTransformerMap;
+
+    @Autowired
+    private ZapposImageService zapposImageService;
 
     public VendorWidgetServiceImpl() {
 
@@ -57,6 +61,7 @@ public class VendorWidgetServiceImpl implements VendorWidgetService {
             final VendorDataTransformer dataTransformer = vendorDataTransformerMap.get(vendor);
 
             final List<SharedJsonItem> sharedJsonItemList = dataTransformer.transform(vendorJson);
+            zapposImageService.get(sharedJsonItemList);
             return sharedJsonItemList;
         }
         else {
