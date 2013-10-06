@@ -10,6 +10,15 @@ public class SharedJsonItem {
     private String productName;
     private String price;
     private String salePrice;
+    private String productUrl;
+
+    public String getProductUrl() {
+        return productUrl;
+    }
+
+    public void setProductUrl(String productUrl) {
+        this.productUrl = productUrl;
+    }
 
     public String getImageUrl() {
         return imageUrl;
