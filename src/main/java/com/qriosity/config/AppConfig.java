@@ -16,10 +16,15 @@ import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.JacksonObjectMapperFactoryBean;
 import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.JstlView;
+import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 /**
  * @author yoandy
@@ -31,9 +36,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class AppConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/css/**").addResourceLocations("/styles/").setCachePeriod(0);
-        registry.addResourceHandler("/img/**").addResourceLocations("/img/").setCachePeriod(0);
-        registry.addResourceHandler("/js/**").addResourceLocations("/js/").setCachePeriod(0);
+        registry.addResourceHandler("/css/**").addResourceLocations("/WEB-INF/styles/").setCachePeriod(0);
+        registry.addResourceHandler("/img/**").addResourceLocations("/WEB-INF/img/").setCachePeriod(0);
+        registry.addResourceHandler("/js/**").addResourceLocations("/WEB-INF/js/").setCachePeriod(0);
+        registry.addResourceHandler("**").addResourceLocations("/WEB-INF/").setCachePeriod(0);
     }
 
     @Override
@@ -44,6 +50,20 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
         converters.add(jacksonHttpMessageConverter());
+    }
+
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/").setViewName("index");
+    }
+
+    @Bean
+    public ViewResolver viewResolver() {
+        UrlBasedViewResolver bean = new UrlBasedViewResolver();
+        bean.setPrefix("/");
+        bean.setSuffix(".html");
+        bean.setViewClass(JstlView.class);
+        return bean;
     }
 
     @Bean
