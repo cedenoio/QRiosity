@@ -985,3 +985,11 @@ section h2 {
     position: relative;
     top: -260px;
     background-color: #f0f0f0; }
+  .result .compare {
+    float: right;
+    height: 30px;
+    width: 30px;
+    top: -40px;
+    right: -10px;
+    z-index: 9;
+    border: 1px solid #e74c3c; }

@@ -136,7 +136,7 @@ var insertVendor = function ( vendorName, data ) {
                     '<span>' +
                         val.productName +
                     '</span>' +
-                    '<img class="compare" data-compareURL="[blank]" src="http://dribbble.s3.amazonaws.com/users/220205/screenshots/783935/checkbox.jpg" width="100"/>' +
+                    '<div class="compare" data-compareURL="[blank]"></div>' +
                 '</h3>' +
                 '<div class="price">' +
                     val.price + 
