@@ -16,4 +16,6 @@ public interface VendorWidgetService {
      */
     public List<SharedJsonItem> getProductRelatedData(String vendor, String itemId);
 
+
+
 }

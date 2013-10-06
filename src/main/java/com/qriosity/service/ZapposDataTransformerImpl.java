@@ -57,6 +57,7 @@ public class ZapposDataTransformerImpl implements VendorDataTransformer {
         sharedJsonItem.setSalePrice(item.getPrice());
         sharedJsonItem.setProductName(item.getProductName());
         sharedJsonItem.setProductUrl(item.getProductUrl());
+        sharedJsonItem.setItemId(item.getStyleId());
         return sharedJsonItem;
     }
 
