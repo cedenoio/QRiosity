@@ -17,6 +17,21 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ZapposDataTransformerImpl implements VendorDataTransformer {
+
+    // we're faking data returned by other services using the starting point in the result set
+    private int startIndex;
+    private int limit;
+
+    public ZapposDataTransformerImpl() {
+        this.startIndex = 0;
+        this.limit = 5;
+    }
+
+    public ZapposDataTransformerImpl(int startIndex) {
+        this();
+        this.startIndex = startIndex;
+    }
+
     @Override
     public List<SharedJsonItem> transform(String json) {
         Gson gson = new Gson();
@@ -24,9 +39,10 @@ public class ZapposDataTransformerImpl implements VendorDataTransformer {
 
         List<SharedJsonItem> sharedJsonItems = new ArrayList<SharedJsonItem>();
         final List<ZapposJsonItem> results = zapposJson.getResults();
-        for (int i = 0; i < results.size(); i++) {
+        for (int i = this.startIndex, count = 0; i < results.size() && count < this.limit; i++, count++) {
             ZapposJsonItem zapposJsonItem =  results.get(i);
             sharedJsonItems.add(transform(zapposJsonItem));
+
         }
         return sharedJsonItems;
     }
