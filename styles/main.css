@@ -892,9 +892,12 @@
     height: auto !important;
     overflow: visible !important; } }
 body {
-  background: url("/img/bg.jpg"); }
+  margin: 0;
+  background: #dddddd; }
 
 header {
+  margin: 0;
+  padding: 10px 5px;
   background: #f1ddbb;
   border: 1px solid #d6c4a6; }
   header a.logo {
@@ -902,15 +905,19 @@ header {
     display: block;
     font-family: QR_medium;
     font-size: 30px;
-    color: #e74c3c; }
+    color: #e74c3c;
+    text-decoration: none;
+    letter-spacing: -1px; }
     header a.logo span {
-      text-transform: uppercase; }
-
-.columns {
-  background: white; }
+      text-transform: uppercase;
+      letter-spacing: 0px; }
 
 img {
   display: block;
   background: black;
   height: 100px;
   width: 100px; }
+
+.scan {
+  padding: 20px 0;
+  background: #65ba99; }
