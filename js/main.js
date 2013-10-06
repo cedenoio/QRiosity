@@ -116,6 +116,15 @@ var insertItem = function ( data ) {
                                                         'Here are a few things to go with it... ' +
                                                 '</span>' +
                                         '</h1>' +
+                                        '<div class="action-call row-fluid">' + 
+                                                '<div class="span12">' + 
+                                                        'Want other opinions? Create a poll and ask friends!' + 
+                                                '</div>' + 
+                                        '</div>' + 
+                                        '<div class="action-call row-fluid">' +
+                                                '<div class="span6 text-center"><a href="#">Select random items for me</a></div>' +
+                                                '<div class="span6 text-center"><a href="#">Let me choose 3 items</a></div>' +
+                                        '</div>' + 
                                 '</div>' +
                         '</div>';
                 
