@@ -981,4 +981,5 @@ header {
     margin: 0 auto;
     width: 100%;
     position: relative;
-    top: -260px; }
+    top: -260px;
+    background-color: #f0f0f0; }
