@@ -5,7 +5,7 @@
 body
 	margin-top: 0
 	background: $gray
-	font-family: Nixie
+	font-family: Alex
 
 header
 	//margin: 0
@@ -26,6 +26,7 @@ header
 			letter-spacing: 0
 
 .scan
+	margin: 0 0 50px
 	padding: 20px 0
 	background: url(../img/closet_banner.jpg)
 	text-align: center
@@ -42,22 +43,25 @@ header
 		font-size: 50px
 		font-weight: bold
 		color: $white
+		font-family: Nixie
 
 		span
 			display: block
 			font-size: 20px
 			font-weight: normal
-			
+section
+	h2
+		text-transform: capitalize
 
 .result	
+	margin: 0 0 20px
 	background: $white
 	overflow: hidden
-	max-height: 305px
+	max-height: 260px
 
 	h3
-		margin: 0 0 200px
+		margin: 0 0 150px
 		padding: 10px 20px
-		background: blue
 
 		span
 			display: block
@@ -68,7 +72,9 @@ header
 	.price
 		padding: 0 20px 10px 0
 		float: right
+		position: relative
 		text-align: right
+		z-index: 9
 
 		span
 			display: block
@@ -79,4 +85,14 @@ header
 		margin: 0 auto
 		width: 100%
 		position: relative
-		top: -300px
+		top: -260px
+		background-color: $white
+
+	.compare
+		float: right
+		height: 30px
+		width: 30px
+		top: -40px
+		right: -10px
+		z-index: 9
+		border: 1px solid $red
