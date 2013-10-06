@@ -12,7 +12,8 @@ $(document).ready(function () {
         itemID = getURLParameter('itemID');
         vendorName = getURLParameter('vendor');
         inProgress[3] = vendorName;
-        ajaxInterval = setInterval( ajaxCalls, 1000 );
+        
+        getItemData( itemID );
 });
 
 // CREDIT: http://stackoverflow.com/questions/1403888/get-url-parameter-with-javascript-or-jquery
@@ -20,6 +21,21 @@ var getURLParameter = function(name) {
     return decodeURI(
         (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
     );
+}
+
+var getItemData = function ( itemID ) {
+        
+        var url = "http://localhost:8080/widget/itemId/" + itemID; 
+        $.ajax({
+                type: "GET",
+                url: url,
+                //data: null,
+                dataType: "json",
+                success: function (data) {
+                                insertItem( data );
+                                ajaxInterval = setInterval( ajaxCalls, 1000 );
+                        }
+        });
 }
 
 var ajaxCalls = function () {
@@ -85,11 +101,32 @@ var getAjaxData = function ( vendor ) {
         });
 }
 
+var insertItem = function ( data ) {
+
+                var vendorSection = $('.item');
+                innerHTML = 
+                        '<div class="row-fluid scan">' +
+                                '<div class="span4">' + 
+                                        '<img src="' + data.imageUrl + '" />' +
+                                '</div>' +
+                                '<div class="span8">' +
+                                        '<h1>' +
+                                                'Sexy outfit' +
+                                                '<span>' +
+                                                        'Here are a few things to go with it... ' +
+                                                '</span>' +
+                                        '</h1>' +
+                                '</div>' +
+                        '</div>';
+                
+                vendorSection.append(innerHTML);
+                
+        }      
+        
 var insertVendor = function ( vendorName, data ) {
 
                 var vendorSection = $('.vendor' + inProgress[4]);
                 innerHTML = 
-                //'<section class="container-fluid ' + vendorName + '"> ' +
                     '<div class="row-fluid">' + 
                         '<h2 class="span12">' + 
                             vendorName +
@@ -120,7 +157,7 @@ var insertVendor = function ( vendorName, data ) {
                         }
                 });
                         
-                innerHTML += '</div><';
+                innerHTML += '</div>';
                 
                 vendorSection.append(innerHTML);
                 
