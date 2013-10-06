@@ -46,7 +46,7 @@ var ajaxCalls = function () {
                         {
                                 getAjaxData(vendor);
                         }
-                        else // if ( vendor == inProgress[3] )
+                        else
                         {
                                 if ( inProgress[1] != 0 )
                                 {
@@ -55,7 +55,6 @@ var ajaxCalls = function () {
                                 }
                                 else
                                 {
-                                        console.log('get ajax');
                                         getAjaxData(vendor);
                                 }
                         }
@@ -90,7 +89,7 @@ var insertVendor = function ( vendorName, data ) {
 
                 var vendorSection = $('.vendor' + inProgress[4]);
                 innerHTML = 
-                '<section class="container-fluid ' + vendorName + '"> ' +
+                //'<section class="container-fluid ' + vendorName + '"> ' +
                     '<div class="row-fluid">' + 
                         '<h2 class="span12">' + 
                             vendorName +
@@ -116,12 +115,12 @@ var insertVendor = function ( vendorName, data ) {
                                         '</span>' +
                                     '</div>' +
                                     '<div class="clearfix"></div>' +
-                                    '<img src="' + val.imageUrl + '" />' +
+                                    '<img src="' + val.highresImageUrl + '" />' +
                                 '</div>';
                         }
                 });
                         
-                innerHTML += '</div></section>';
+                innerHTML += '</div><';
                 
                 vendorSection.append(innerHTML);
                 
