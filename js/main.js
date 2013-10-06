@@ -88,6 +88,7 @@ var insertVendor = function ( vendorName, data ) {
                     '<span>' +
                         val.productName +
                     '</span>' +
+                    '<img class="compare" data-compareURL="[blank]" src="http://dribbble.s3.amazonaws.com/users/220205/screenshots/783935/checkbox.jpg" width="100"/>' +
                 '</h3>' +
                 '<div class="price">' +
                     val.price + 
@@ -107,6 +108,8 @@ var insertVendor = function ( vendorName, data ) {
 
     $('.vendor' + inProgress[4] + ' .result img').click(function() {
     	$('.result img').css('top', '-260px');
+    	var testing = $(this).attr("data-compareURL");
+    	console.log(testing);
 	  	$(this).animate({
 	    	top: "-=1000"
 	  	}, 1000, function() {
