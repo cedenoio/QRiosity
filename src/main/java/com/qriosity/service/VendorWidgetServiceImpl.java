@@ -20,8 +20,6 @@ import java.util.Map;
 @Service
 public class VendorWidgetServiceImpl implements VendorWidgetService {
 
-
-
     // URLs provided by vendors to get widget related info
     private Map<String, String> vendorUrlMap;
     //
@@ -31,12 +29,22 @@ public class VendorWidgetServiceImpl implements VendorWidgetService {
 
         this.vendorUrlMap = new HashMap<String, String>();
         this.vendorUrlMap.put("zappos",
-                "http://api.zappos.com/Search/Similarity?type=moreLikeThis&limit=5&styleId=%s&emphasis=color&key=52ddafbe3ee659bad97fcce7c53592916a6bfd73");
+                "http://api.zappos.com/Search/Similarity?type=moreLikeThis&limit=15&styleId=%s&emphasis=color&key=52ddafbe3ee659bad97fcce7c53592916a6bfd73");
+
+        this.vendorUrlMap.put("macys",
+                "http://api.zappos.com/Search/Similarity?type=moreLikeThis&limit=15&styleId=%s&emphasis=color&key=52ddafbe3ee659bad97fcce7c53592916a6bfd73");
+
+        this.vendorUrlMap.put("tjmaxx",
+                "http://api.zappos.com/Search/Similarity?type=moreLikeThis&limit=15&styleId=%s&emphasis=color&key=52ddafbe3ee659bad97fcce7c53592916a6bfd73");
 
 
         this.vendorDataTransformerMap = new HashMap<String, VendorDataTransformer>();
         this.vendorDataTransformerMap.put("zappos",
                 new ZapposDataTransformerImpl());
+        this.vendorDataTransformerMap.put("macys",
+                new ZapposDataTransformerImpl(5));
+        this.vendorDataTransformerMap.put("tjmaxx",
+                new ZapposDataTransformerImpl(10));
     }
 
     @Override
