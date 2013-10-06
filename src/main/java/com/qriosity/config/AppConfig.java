@@ -1,5 +1,6 @@
 package com.qriosity.config;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.qriosity.servlet.filter.JsonpFilter;
@@ -68,6 +69,9 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     @Bean
     public RestTemplate restTemplate() {
         RestTemplate restTemplate = new RestTemplate();
+        List<HttpMessageConverter<?>> converters = new ArrayList<HttpMessageConverter<?>>();
+        configureMessageConverters(converters);
+        restTemplate.setMessageConverters(converters);
         return restTemplate;
     }
 

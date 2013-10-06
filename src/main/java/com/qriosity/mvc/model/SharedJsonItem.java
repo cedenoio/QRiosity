@@ -5,12 +5,31 @@ package com.qriosity.mvc.model;
  */
 public class SharedJsonItem {
 
+    private String itemId;
     private String imageUrl;
     private String brandName;
     private String productName;
     private String price;
     private String salePrice;
     private String productUrl;
+
+    private String highresImageUrl;
+
+    public String getItemId() {
+        return itemId;
+    }
+
+    public void setItemId(String itemId) {
+        this.itemId = itemId;
+    }
+
+    public String getHighresImageUrl() {
+        return highresImageUrl;
+    }
+
+    public void setHighresImageUrl(String highresImageUrl) {
+        this.highresImageUrl = highresImageUrl;
+    }
 
     public String getProductUrl() {
         return productUrl;
