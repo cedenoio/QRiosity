@@ -2,6 +2,7 @@ package com.qriosity.config;
 
 import java.util.List;
 
+import com.qriosity.servlet.filter.JsonpFilter;
 import org.codehaus.jackson.map.DeserializationConfig;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.SerializationConfig;
@@ -68,5 +69,10 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     public RestTemplate restTemplate() {
         RestTemplate restTemplate = new RestTemplate();
         return restTemplate;
+    }
+
+    @Bean
+    public JsonpFilter jsonpFilter() {
+        return new JsonpFilter();
     }
 }

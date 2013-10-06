@@ -1,16 +1,17 @@
 package com.qriosity.mvc.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.annotation.Resource;
 import com.qriosity.mvc.model.SharedJsonItem;
 import com.qriosity.service.ProductDetailService;
 import com.qriosity.service.VendorWidgetService;
 
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.util.JSONPObject;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author yoandy
@@ -35,4 +36,6 @@ public class WidgetController {
     public SharedJsonItem itemInfo(@PathVariable("itemId") final String itemId) {
         return productDetailService.getProductDetail(itemId);
     }
+
+
 }
