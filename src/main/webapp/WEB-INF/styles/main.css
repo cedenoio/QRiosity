@@ -997,7 +997,8 @@ section h2 {
     float: right;
     position: relative;
     text-align: right;
-    z-index: 9; }
+    z-index: 9;
+    top: -30px; }
     .result .price span {
       display: block;
       color: #e74c3c;
@@ -1031,3 +1032,16 @@ section h2 {
 
 .hide {
   display: none; }
+
+.buyit a {
+  margin: 0 0 8px;
+  padding: 5px 10px;
+  display: inline-block;
+  background: #f0f0f0;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: arial;
+  color: #59a386; }
+  .buyit a:hover {
+    color: #e74c3c !important; }
