@@ -144,7 +144,7 @@ public class WedgiesService {
         JsonArray jsonArray = new JsonArray();
         for (int i=0; i < choices.size(); i++) {
             JsonObject jsonChoice = new JsonObject();
-            jsonChoice.addProperty(choices.get(i), "OPTION " + (i+1));
+            jsonChoice.addProperty("text", choices.get(i));
             jsonArray.add(jsonChoice);
         }
         jsonObject.add("choices", jsonArray);
