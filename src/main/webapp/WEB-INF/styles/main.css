@@ -1559,14 +1559,15 @@ section h2 {
   position: relative;
   text-align: right;
   z-index: 9;
+  top: -30px;
 }
-/* line 106, main.sass */
+/* line 107, main.sass */
 .result .price span {
   display: block;
   color: #e74c3c;
   font-size: 18px;
 }
-/* line 111, main.sass */
+/* line 112, main.sass */
 .result img {
   margin: 0 auto;
   width: 100%;
@@ -1574,7 +1575,7 @@ section h2 {
   top: -260px;
   background-color: #f0f0f0;
 }
-/* line 118, main.sass */
+/* line 119, main.sass */
 .result .compare-div {
   float: right;
   top: -40px;
@@ -1582,7 +1583,7 @@ section h2 {
   z-index: 9;
   overflow: hidden;
 }
-/* line 128, main.sass */
+/* line 129, main.sass */
 .result img.compare {
   height: 60px;
   width: 60px;
@@ -1592,12 +1593,12 @@ section h2 {
   z-index: 20;
 }
 
-/* line 137, main.sass */
+/* line 138, main.sass */
 .text-center {
   position: relative;
   text-align: center;
 }
-/* line 141, main.sass */
+/* line 142, main.sass */
 .text-center .compare {
   float: right;
   height: 30px;
@@ -1608,7 +1609,24 @@ section h2 {
   border: 1px solid #e74c3c;
 }
 
-/* line 150, main.sass */
+/* line 151, main.sass */
 .hide {
   display: none;
+}
+
+/* line 155, main.sass */
+.buyit a {
+  margin: 0 0 8px;
+  padding: 5px 10px;
+  display: inline-block;
+  background: #f0f0f0;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: arial;
+  color: #59a386;
+}
+/* line 165, main.sass */
+.buyit a:hover {
+  color: #e74c3c !important;
 }
